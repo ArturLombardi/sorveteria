@@ -1,0 +1,56 @@
+@startuml Class Diagram Online System
+
+class User{
+    -usingneddBigInteger id
+    -string  email
+    -string password
+    -string photo
+    -enum role
+    -daterime2 timestamps
+}
+class Client {
+    -usingneddBigInteger id
+    -string user_id
+    -string full_name
+    -string perfil_name
+    -string cpf_hash
+    -date birthday
+    -string preferences
+    -daterime2 timestamps
+}
+class Administrator {
+    -usingneddBigInteger id
+    -string user_id
+    -daterime2 timestamps
+}
+class Manager {
+    -usingneddBigInteger id
+    -string user_id
+    -daterime2 timestamps
+}
+class Product {
+    -usingneddBigInteger id
+    -string name
+    -string description
+    -decimal price
+    -daterime2 timestamps
+}
+class Order {
+    -usingneddBigInteger id
+    -string client_id
+    -string product_id
+    -int quantity
+    -decimal total_price
+    -daterime2 timestamps
+}
+
+User  <|--  Client
+User  <|--  Administrator
+User  <|--  Manager
+Client  "1" -- "0..*"  Order : do
+Product  "1..*" *-- "1..*" Order
+
+
+
+
+@enduml

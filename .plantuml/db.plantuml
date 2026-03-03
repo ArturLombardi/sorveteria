@@ -1,0 +1,113 @@
+@startuml Data base
+
+skinparam nodesep 80
+skinparam ranksep 80
+skinparam defaultFontSize 16
+
+
+entity roles {
+    role_id : bigint <<PK>>
+    --
+    role : varchar(25)
+}
+
+entity users {
+    +user_id : bigint <<PK>>
+    --
+    role_id : role <<FK>>
+    --
+    email : varchar(60)
+    password : varchar(255)
+    is_active : boolean
+    created_at : datetime2
+    updated_at : datetime2
+}
+entity people {
+    +person_id : bigint <<PK>> 
+    --
+    user_id : bigint <<FK>>
+    --
+    first_name : varchar(25)
+    last_name : varchar(25)
+    perfil_name : varchar(25) 
+    cpf_hash : string
+    birthday : date 
+    gernder : varchar(10)
+}
+entity clients {
+    +clients_id : bigint <<PK>> 
+    --
+    preferences : nvarchar
+}
+' entity administrators {
+'     +administrator_id : bigint <<PK>> 
+'     --
+'     person_id : bigint <<FK>> 
+'     --
+'     first_name : varchar(25)
+'     last_name : varchar(25) 
+'     created_at : datetime2
+'     updated_at : datetime2
+' }
+entity managers {
+    +manager_id : bigint <<PK>> 
+    --
+    person_id : bigint <<FK>>  
+    --
+    first_name : varchar(25)
+    last_name : varchar(25)
+    created_at : datetime2
+    updated_at : datetime2
+}
+entity companies {
+    +company_id : bigint <<PK>> 
+    --
+    people_id : bigint <<FK>> 
+    --
+    fantasy_name : varchar(30)
+    address : varchar(50)
+}
+entity products {
+    +products_id : bigint <<PK>> 
+    --
+    name : varchar(30)
+    description : varchar(255)
+    unity_price : decimal(10,2)
+    created_at : datetime2
+    updated_at : datetime2
+}
+entity order_items {
+    +product_id : bigint <<PK, FK>>
+    +order_id : bigint <<PK, FK>>
+    --
+    quantity : int
+    price : decimal(10,2)
+}
+entity orders {
+    +order_id : bigint <<PK>>
+    --
+    user_id : bigint <<FK>>
+    --
+    created_at : datetime2
+    updated_at : datetime2
+}
+
+users "1..*"-"1" roles
+
+users  "1"--"0..1" people
+users  "1"--"0..1" companies
+
+people  "1"--"0..1"  clients
+' people  "1"--"0..1"  administrators
+people  "1"--"0..1"  managers
+
+users  "1..*"--"0..*"  orders
+
+
+orders    "1"--"1..*"  order_items
+products  "1"--"1..*" order_items
+
+
+
+
+@enduml
