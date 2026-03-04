@@ -2,7 +2,7 @@
 Um estudo simples em Laravel aplicado a uma loja online ficticia de vendas de sorvetes. Estou reaproveitando uma simples estrutura de login que fiz e estou reaproveitando para corrigir e a melhorar. 
 
 ## Etapas
-- [ ] Descrição completa;
+- [x] Descrição geral;
 - [ ] Definir estruturas lógicas (diagramas);
     - [x] Casos de uso;
     - [ ] Banco de dados;
@@ -22,6 +22,13 @@ Um estudo simples em Laravel aplicado a uma loja online ficticia de vendas de so
 - [ ] Sistema de relatórios;
 - [ ] Sistema de ordens de produção.
 
+## Descrição geral
+
+Loja online fictícia especializada na venda de sorvetes, o nome da loja é Sorveteria. Um cliente pode ser tanto uma pessoa física quanto jurídica, ambos para serem registrados devem inserir e-mail e senha. O primeiro deve informar também nome, sobrenome, nome de perfil, cpf e data de aniversário para criar uma conta na aplicação. O segundo deve informar o nome fantasia, cnpj e endereço para criar a conta. Um cliente deve ser capaz de realizar um pedido, verificar histórico de compras e acompanhar o pedido. 
+
+Imagem de perfil e gênero são informações opcionais para clientes, mas obrigatórias para gerentes. Estes que são responsáveis pelo gerenciamento das vendas. 
+
+Um pedido é composto de 1 ou mais produtos, estes que possuem nome, descrição, preço unitário, categoria e, status.
 
 ## Casos de uso
 
