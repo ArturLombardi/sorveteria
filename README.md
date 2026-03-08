@@ -38,6 +38,14 @@ Um pedido é composto de 1 ou mais produtos, estes que possuem nome, descrição
 
 ![Banco de dados](out/plantuml/db/Data%20base.png)
 
+## Classes
+
+![Diagrama de classes v1](out/plantuml/class/Class%20Diagram%20Online%20System.png)
+
+## Objetos
+
+![Diagrama de objetos v1](out/plantuml/object/Object%20Diagram%20Online%20System.png)
+
 ## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
