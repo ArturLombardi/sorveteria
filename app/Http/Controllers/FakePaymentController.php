@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\category;
+use App\Models\FakePayment;
 use Illuminate\Http\Request;
 
-class CategoryController extends Controller
+class FakePaymentController
 {
     /**
      * Display a listing of the resource.
@@ -34,7 +34,7 @@ class CategoryController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(category $category)
+    public function show(FakePayment $fakePayment)
     {
         //
     }
@@ -42,7 +42,7 @@ class CategoryController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(category $category)
+    public function edit(FakePayment $fakePayment)
     {
         //
     }
@@ -50,7 +50,7 @@ class CategoryController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, category $category)
+    public function update(Request $request, FakePayment $fakePayment)
     {
         //
     }
@@ -58,7 +58,7 @@ class CategoryController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(category $category)
+    public function destroy(FakePayment $fakePayment)
     {
         //
     }

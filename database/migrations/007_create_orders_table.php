@@ -13,14 +13,16 @@ return new class extends Migration
     {
         Schema::create('orders', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('invoice_id')
-                  ->constrained('invoices')
-                  ->cascadeOnDelete();
-            $table->foreignId('product_id')
-                  ->constrained('products')
-                  ->cascadeOnDelete();
-            $table->integer('quantity');
-            $table->decimal('unit_price', 10, 6);
+            $table->foreignId('user_id')
+                  ->constrained('users');
+            $table->string('country_code', 3);
+            $table->string('state',50);
+            $table->string('city',50);
+            $table->enum('client_id_type', ['cpf', 'cnpj','ssn','ein','other']);
+            $table->string('postal_code', 20);
+            $table->string('address', 120);
+            $table->string('number', 10);
+            $table->string('complement', 50)->nullable();
             $table->timestamps(3);
         });
     }

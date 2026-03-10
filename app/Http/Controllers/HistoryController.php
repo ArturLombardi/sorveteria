@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Attendant;
+use App\Models\History;
 use Illuminate\Http\Request;
 
-class AttendantController extends Controller
+class HistoryController
 {
     /**
      * Display a listing of the resource.
@@ -34,7 +34,7 @@ class AttendantController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Attendant $attendant)
+    public function show(History $history)
     {
         //
     }
@@ -42,7 +42,7 @@ class AttendantController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Attendant $attendant)
+    public function edit(History $history)
     {
         //
     }
@@ -50,7 +50,7 @@ class AttendantController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Attendant $attendant)
+    public function update(Request $request, History $history)
     {
         //
     }
@@ -58,7 +58,7 @@ class AttendantController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Attendant $attendant)
+    public function destroy(History $history)
     {
         //
     }

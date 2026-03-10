@@ -13,10 +13,9 @@ return new class extends Migration
     {
         Schema::create('products', function (Blueprint $table) {
             $table->id();
-            $table->string('name', 50);
-            $table->foreignId('category_id')->constrained('categories');
-            $table->decimal('price', 10, 6);
-            $table->decimal('cost', 10, 6);
+            $table->string('name', 30);
+            $table->string('description', 255);
+            $table->decimal('price', 7, 2);
             $table->boolean('active')->default(true);
             $table->timestamps(3);
         });

@@ -15,16 +15,8 @@ return new class extends Migration
     {
         Schema::create('clients', function (Blueprint $table) {
             $table->id();
-             $table->foreignId('user_id')
-                   ->constrained('users');
-            $table->string('first_name', 25);
-            $table->string('last_name', 25);
-            $table->string('perfil_name', 50)->unique();
-            $table->string('cpf',11)->unique();
-            $table->date('birthday');
-            $table->string('phone',20)->nullable();
-            $table->string('gender',10)->nullable();
-            $table->json('preferences')->nullable();
+            $table->foreignId('person_id')->constrained('people');
+            $table->string('preferences')->nullable();
             $table->timestamps(3);
             
         });

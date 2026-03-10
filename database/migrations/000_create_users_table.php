@@ -13,10 +13,16 @@ return new class extends Migration
     {
         Schema::create('users', function (Blueprint $table) { 
             $table->id();
-            $table->string('email', 50)->unique();
+            $table->enum('role',['client','company','manager',])->default('client');
+            $table->string('email', 60)->unique();
             $table->string('password', 255);
             $table->string('photo',100)->nullable();
-            $table->enum('role',['client','admin','manager','attendants'])->default('client');
+            $table->string('country_code', 3)->nullable();
+            $table->string('state',50)->nullable();
+            $table->string('city',50)->nullable();
+            $table->enum('client_id_type', ['cpf', 'cnpj','ssn','ein','other'])->nullable();
+            $table->string('client_id_hash')->nullable();
+            $table->string('client_id_encrypted')->nullable();
             $table->boolean('is_active')->default(true);
             $table->timestamps(3);
         });

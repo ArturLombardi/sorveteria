@@ -11,14 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('invoices', function (Blueprint $table) {
+        Schema::create('companies', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('client_id')
-                  ->constrained('clients');
-            $table->foreignId('attendant_id')
-                  ->constrained('attendants');
-            $table->date('invoice_date')->useCurrent();
-            $table->decimal('total_amount', 9, 2);
+            $table->foreignId('user_id')->constrained('users');
+            $table->string('company_name', 30)->unique();
+            $table->string('address', 100)->nullable();
             $table->timestamps(3);
         });
     }
@@ -28,6 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('invoices');
+        Schema::dropIfExists('companies');
     }
 };

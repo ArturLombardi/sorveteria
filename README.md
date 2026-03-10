@@ -6,7 +6,7 @@ Um estudo simples em Laravel aplicado a uma loja online ficticia de vendas de so
 - [ ] Definir estruturas lógicas (diagramas);
     - [x] Casos de uso;
     - [ ] Banco de dados;
-    - [ ] Classe e objeto;
+    - [ ] Classe(model) e objeto;
     - [ ] Rotas;
     - [ ] Modelo semântico;
     - [ ] Desenho da arquitetura de funcionamento geral;
@@ -38,13 +38,37 @@ Um pedido é composto de 1 ou mais produtos, estes que possuem nome, descrição
 
 ![Banco de dados](out/plantuml/db/Data%20base.png)
 
-## Classes
+<!-- ## Classes
 
 ![Diagrama de classes v1](out/plantuml/class/Class%20Diagram%20Online%20System.png)
 
 ## Objetos
 
-![Diagrama de objetos v1](out/plantuml/object/Object%20Diagram%20Online%20System.png)
+![Diagrama de objetos v1](out/plantuml/object/Object%20Diagram%20Online%20System.png) -->
+
+## Rotas
+
+|AÇÃO|URL|METODO|NOME|DESCRIÇÃO|
+|---|---|---|---|---|
+|GET|/home-page|index()|home-page.index|Home Page|
+|GET|/catalog|index()|catalog.index|mostra a lista de produtos à venda|
+|GET|/catalog/{product}|show()|catalog.show|mostra um produto|
+|POST|/catalog|store()|catalog.store|submissão do formulário do novo produto|
+|GET|/catalog/create|create()|catalog.create|mostra o fomulario para adicionar produtos|
+|GET|/catalog/{product}/edit|edit()|catalog.edit|edita um produto|
+|PUT/PATH|/catalog/{product}|update()|catalog.update|update de um produto|
+|DELETE|/catalog/{product}|delete()|catalog.delete|apaga um produto| 
+|
+|GET|/cart/{id}|edit()|cart.edit|mostra os produtos adicionados ao carrinho|
+|PUT/PATH|/cart/{id}|update()|cart.update|submissão do formulário dos produtos comprados|
+|DELETE|/cart/{id}|delete()|cart.delete|apaga um produto do carrinho| 
+|
+|GET|/fake-payment/{id}|index()|fake-payment.index|mostra o fomulário de pagamento|
+|POST|/fake-payment/{id}|post|edit()|fake-payment.edit|submissão do formulário de pagamento|
+|
+|GET|/history/{id}|index()|history.index|mostra o histórico de compras de um usuário|
+
+
 
 ## License
 
